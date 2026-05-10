@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proyecto Kanban</title>
+    <!-- CDN de Tailwind CSS -->
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="flex flex-col bg-purple-50 min-h-screen font-sans text-slate-800">
+
+    <header class="bg-violet-800 text-slate-100 p-6 shadow-md mb-8">
+        <h1 class="text-3xl font-extrabold text-center uppercase tracking-tight"><a href="./index.html" class="text-slate-100 hover:text-slate-300">Gestor de Proyectos Scrum</a></h1>
+    </header>
+
+    <main class="grow container mx-auto px-4 pb-12">
+        <div class="max-w-2xl mx-auto bg-white p-8 rounded-xl shadow-md border border-slate-200">
+            
+            <div class="flex flex-col md:flex-row items-center md:justify-between mb-6 border-b pb-4 gap-2">
+                <h2 class="text-2xl font-bold text-violet-700">Detalles de la Tarea</h2>
+                <a href="./index.html" class="text-slate-800 hover:text-slate-600 font-medium flex items-center">
+                    &larr; Volver al tablero
+                </a>
+            </div>
+
+            <form id="task-form" class="space-y-6">
+                <!-- Campo ID (Oculto) -->
+                <input type="hidden" id="task-id" name="id">
+
+                <!-- Título -->
+                <div>
+                    <label for="titulo" class="block text-sm font-semibold text-slate-600 mb-1">Título de la tarea</label>
+                    <input type="text" id="titulo" name="titulo" required 
+                           class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-violet-400 outline-none transition-all"
+                           placeholder="Ej: Diseñar base de datos">
+                </div>
+
+                <!-- Descripción -->
+                <div>
+                    <label for="descripcion" class="block text-sm font-semibold text-slate-600 mb-1">Descripción</label>
+                    <textarea id="descripcion" name="descripcion" 
+                              class="w-full p-3 border rounded-lg focus:ring-2 focus:ring-violet-400 outline-none h-32 transition-all"
+                              placeholder="Describe los detalles del trabajo..."></textarea>
+                </div>
+
+                <!-- Grid para campos secundarios -->
+                <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                    <!-- Prioridad -->
+                    <div>
+                        <label for="prioridad" class="block text-sm font-semibold text-slate-600 mb-1">Prioridad</label>
+                        <select id="prioridad" name="prioridad" class="w-full p-3 border rounded-lg outline-none bg-white focus:ring-2 focus:ring-violet-400">
+                            <option value="baja">Baja</option>
+                            <option value="media" selected>Media</option>
+                            <option value="alta">Alta</option>
+                        </select>
+                    </div>
+
+                    <!-- Estado -->
+                    <div>
+                        <label for="estado" class="block text-sm font-semibold text-slate-600 mb-1">Estado actual</label>
+                        <select id="estado" name="estado" class="w-full p-3 border rounded-lg outline-none bg-white focus:ring-2 focus:ring-violet-400">
+                            <option value="porHacer">Por hacer</option>
+                            <option value="enCurso">En curso</option>
+                            <option value="hecho">Hecho</option>
+                        </select>
+                    </div>
+
+                    <!-- Fecha Vencimiento -->
+                    <div>
+                        <label for="fechaVencimiento" class="block text-sm font-semibold text-slate-600 mb-1">Fecha de vencimiento</label>
+                        <input type="date" id="fechaVencimiento" name="fechaVencimiento" 
+                               class="w-full p-3 border rounded-lg outline-none focus:ring-2 focus:ring-violet-400">
+                    </div>
+
+                    <!-- Creado El -->
+                    <div>
+                        <label for="creadoEl" class="block text-sm font-semibold text-slate-600 mb-1">Fecha de creación</label>
+                        <input type="date" id="creadoEl" name="creadoEl" 
+                               class="w-full p-3 border rounded-lg bg-slate-50 outline-none focus:ring-2 focus:ring-violet-400">
+                    </div>
+                </div>
+
+                <!-- Botones de Acción -->
+                <div class="pt-6 flex gap-4">
+                    <button type="submit" class="flex-1 bg-violet-800 text-white py-3 rounded-lg font-bold hover:bg-violet-600 transition-shadow shadow-md">
+                        Guardar Tarea
+                    </button>
+                    <button type="reset" class="px-6 py-3 border border-slate-300 rounded-lg text-slate-600 hover:bg-slate-50 transition-colors">
+                        Limpiar
+                    </button>
+                </div>
+            </form>
+        </div>
+    </main>
+
+    <footer class="text-center py-8 text-slate-500 text-sm border-t border-slate-200 mt-auto">
+        <p>&copy; 2026 Aplicación web de gestión de tareas | Práctica DAW06</p>
+    </footer>
+
+    <!-- Enlace relativo a JS -->
+    <script src="./js/script.js"></script>
+</body>
+</html>
