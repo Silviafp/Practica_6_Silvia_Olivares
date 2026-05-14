@@ -20,9 +20,7 @@ export const formatearFechaDiaMesAnno = (fechaStr) => {
 };
 
 export const limpiarNodo = (nodo) => {
-  while (nodo.firstChild) {
-    nodo.removeChild(nodo.firstChild);
-  }
+  nodo.replaceChildren();
 };
 
 export const obtenerIdUrl = () => {
