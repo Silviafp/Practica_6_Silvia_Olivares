@@ -1,5 +1,5 @@
 # Gestor de Proyectos Scrum - Kanban
-
+Enlace del proyecto en GitHub Pages: https://silviafp.github.io/Practica_6_Silvia_Olivares/
 ## Descripción de la Aplicación
 
 ### ¿Qué es?
